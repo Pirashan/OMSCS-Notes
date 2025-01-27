@@ -74,14 +74,14 @@ Optional tutorial for Pandas basics: [Pandas Tutorial 1: Pandas Basics (Reading 
 
 ### Types Of Studies And Sampling Errors
 
-Recall that descriptive analytics may include:
+Recall that descriptive analytics are methods of organizing, summarizing, and presenting data in an informative way which may include:
 
 - Frequency tables
 - Histograms
 - Mean
 - Variance
 
-While inferential analytics may include:
+While inferential analytics are the methods used to determine something about a population on the basis of a sample (ML/AI for big data) which may include:
 
 - **Population**: the entire set of individuals or objects of interest or the measurements obtained from all individuals or objects of interest
 - **Sample**: a portion, or part, of the population of interest
@@ -99,7 +99,7 @@ The discrepancy between a sample statistic and its population parameter is calle
 Recall the following definitions:
 
 - **Mean**: the arithmetic average which is best for symmetric distributions
-- **Median**: the middle value in an ordered sequence of observations which is _less_ sensitive to outliers (extreme scores) than the mean and thus a better measure than the mean for highly skewed distributions
+- **Median**: the middle value in an **ordered sequence** of observations which is _less_ sensitive to outliers (extreme scores) than the mean and thus a better measure than the mean for highly skewed distributions (**not normally distributed**). This is for an **ordered sequence** of observations.
 - **Mode**: the most frequently occurring number
 
 ### How To Mislead With Averages
@@ -112,9 +112,16 @@ A **frequency distribution** keeps count of the number of times a data item occu
 
 ### Variability
 
-**Variability** (or dispersion) measures the amount of scatter in a dataset. Gives us an indication of indicate how well the average characterizes the data as a whole.
+**Variability** (or dispersion) measures the amount of scatter in a dataset. Gives us an indication of how well the **average characterizes the data as a whole**.
 
-Commonly used variability methods include: range, variance, standard deviation, inter-quartile range, coefficient of variation, etc. The **five number summary**: is a summary of a distribution which consists of:
+Commonly used variability methods include: range, variance, standard deviation, inter-quartile range, coefficient of variation, etc.
+
+**Range** is the difference between the largest and the smallest observations.
+**Variance** is the average of the squares of the deviations of the observations from their mean.
+**Standard Deviation** is the square root of the variance.
+**Quartiles** are the cut points of data being divided into four regions.
+
+The **five number summary**: is a summary of a distribution which consists of:
 
 1. Min
 2. Q1 (first quartile or min to 25% of the data)
@@ -136,7 +143,9 @@ Optional tutorial for Pandas basics: [Pandas Tutorial 2: Pandas Basics (Aggregat
 
 ### Inferential Statistics Introduction
 
-Recall that inferential statistics provide numerical indications of how likely it is that a given event will occur.
+Recall that inferential statistics provide numerical indications of how likely it is that a given event will occur. It is an inference based on a sample that indicates the likelihood of something for the total population.
+<img width="531" alt="image" src="https://github.com/user-attachments/assets/dc4d79fd-d112-4d27-b390-2b8c367f1086" />
+
 
 **Statistical probability** is the odds that what we observed in the sample did not occur because of errors (random and/or systematic). In other words, the probability associated with a statistics is the **level of confidence** we have that the sample group that we measured actually represents the total population.
 
