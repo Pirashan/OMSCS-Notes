@@ -40,12 +40,16 @@ There are two types of analytics:
 
 ### All About The Data
 
-Stats starts with data, the facts and figures are collected summarized, analyzed, or interpreted. Data can come in various flavors:
+Stats starts with data, the facts and figures collected, summarized, analyzed, or interpreted. Data can come in various flavors:
 
 - **Quantitative/qualitative**
 - **Continuous**: data is infinitely divisible into whatever units a researcher may choose
-- **Ordinal/rank**: in order but not necessarily equal
+- **Ordinal/rank**: in order but not necessarily equal (eg. letter grades)
 - **Categorical/discrete**: data consists of indivisible categories
+
+Ordinal/rank could look the same as categorical/discrete in certain cases.
+
+**Cross-Sectional Data** are collected at the same or approximately the same point in time, as opposed to **Time-Series Data** which is collected over several time periods.
 
 ### Introduction To Python And Jupyter
 
@@ -58,7 +62,9 @@ Python data analytics:
 
 ### Basic Statistical Measures And Data Analytics Using Python
 
-**Jupyter Notebook** is an open source web-based interactive data analysis environment that supports iPython, a Python command shell for interactive computing.
+**Jupyter Notebook** (browser-based interpreter) is an open source web-based interactive data analysis environment that supports iPython, a Python command shell for interactive computing.
+
+Jupyter Notebook documents allow us to incorporate text, code, as well as the output.
 
 ### Hands On Tutorial: Pandas Basics 1
 
