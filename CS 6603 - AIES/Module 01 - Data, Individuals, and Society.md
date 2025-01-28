@@ -69,7 +69,34 @@ On the other hand, the purpose of _regulations_ is to achieve certain public des
 - Employment
 - Housing and public accommodation
 
-**Discrimination** is prohibited on the basis of membership in a protected class-group which has historically been discriminated against. Forms of discrimination (or bias) include:
+**Discrimination** is prohibited on the basis of membership in a protected class-group which has historically been discriminated against.
+
+The protected classes are as follows:
+·Race (Civil Rights Act of 1964, 1991)
+
+·Color (Civil Rights Act of 1964, 1991)
+
+·Sex (Equal Pay Act of 1963; Civil Rights Act of 1964, 1991)
+
+·Religion (Civil Rights Act of 1964, 1991)
+
+·National origin (Civil Rights Act of 1964, 1991)
+
+·Citizenship (Immigration Reform and Control Act)
+
+·Age (Age Discrimination in Employment Act of 1967) (over 40)
+
+·Pregnancy (Pregnancy Discrimination Act)
+
+·Familial status (Civil Rights Act of 1968)
+
+·Disability status (Rehabilitation Act of 1973; Americans with Disabilities Act of 1990)
+
+·Veteran status (Vietnam Era Veterans' Readjustment Assistance Act of 1974; Uniformed Services Employment and Reemployment Rights Act)
+
+·Genetic information (Genetic Information Nondiscrimination Act)
+
+Forms of discrimination (or bias) include:
 
 - Intentional
 - Unconscious
