@@ -144,8 +144,10 @@ Optional tutorial for Pandas basics: [Pandas Tutorial 2: Pandas Basics (Aggregat
 ### Inferential Statistics Introduction
 
 Recall that inferential statistics provide numerical indications of how likely it is that a given event will occur. It is an inference based on a sample that indicates the likelihood of something for the total population.
-<img width="531" alt="image" src="https://github.com/user-attachments/assets/dc4d79fd-d112-4d27-b390-2b8c367f1086" />
 
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/dc4d79fd-d112-4d27-b390-2b8c367f1086" />
+
+A **common mistake** is that not **all samples** will lead to **good predictions** about an **entire population**.
 
 **Statistical probability** is the odds that what we observed in the sample did not occur because of errors (random and/or systematic). In other words, the probability associated with a statistics is the **level of confidence** we have that the sample group that we measured actually represents the total population.
 
@@ -177,14 +179,15 @@ Since we can’t have a boundless survey that covers all data points. There are 
 
 _What seems to be a good sampling method (provided in lecture)_?
 
-- B, since the distribution is normal and the population parameter is right in the middle of the distribution
+- B, since the distribution is normal and the population parameter is right in the middle of the distribution.
+However, real world situations do not always follow a Gaussian distribution!
 
 ### Types Of Randomized Sampling
 
 Benefits of **randomized sampling** include:
 
 - Reduces issues with sampling bias
-- Ensures hat on the average the sample looks like the rest of the population
+- Ensures that on average the sample set looks like the rest of the population
 - Enables us to make rigorous probabilistic statements concerning possible error in the sample
 
 Randomization methods include:
@@ -192,11 +195,31 @@ Randomization methods include:
 - Random sampling
 - Simple random sampling
 
-In **systemic sampling**, all data is sequentially numbered and every $n$ piece of data is chosen. We can combine this technique with random sampling to systematically generate a randomized sample.
+In **systematic sampling**, all data is sequentially numbered and every $n$ piece of data is chosen. We can combine this technique with random sampling to systematically generate a randomized sample.
 
-Additionally, data may be divided into subgroups (strata) as in **stratified random sampling** or clustered as in **cluster random sampling** where each cluster is a miniature version of the entire population (useful when it is difficult and costly to develop a complete list of the population members).
+Additionally, data may be divided into subgroups (strata) as in **stratified sampling** or clustered as in **cluster random sampling** where each cluster is a miniature version of the entire population (useful when it is difficult and costly to develop a complete list of the population members).
 
 The high cost of obtaining data has some companies looking for data on the internet. On the internet a common sampling method is **non-probability sampling** where participants are chosen or choose themselves so that the chance of being selected is not known.
+
+**Simple Random Sampling** is when each population element has an equal chance of being selected into the sample. Sample drawing using random number table/generator.
+
+**Systematic Sampling** is when an element of the population is selected at the beginning with a random start, and following the sampling skip interval selects every kth element.
+
+**Stratified Sampling** is when we divide into subpopulations or strata and use simple random sampling on each stratum. Results may be weighted or combined.
+
+**Cluster Random Sampling**
+- Sometimes stratifying isn't practical and simple random sampling is difficult
+- Splitting the population into similar parts or clusters can make sampling more practical
+- Each cluster should be a miniature version of the entire population
+- Then we could select one or a few clusters at random and select a simple random sample from each chosen cluster
+- If each cluster fairly represents the full population, cluster random sampling will give us an unbiased sample
+
+This is useful when it is **difficult and costly** to develop a complete list of the population members.
+
+**Non-Probability Sampling**
+- The high cost of obtaining data has companies looking to data on the internet.
+- Non-probability sampling: participants are chosen or choose themselves so that the chance of being selected is not know.
+- **No one has figured out how to select a representative sample of internet users that reflects a global population.**
 
 ### Sampling Bias Example Experiments
 
@@ -213,6 +236,8 @@ Correlation tells us two variables are _related_. Types of relationship reflecte
 
 Of course, correlation does not imply causation!
 
+The **correlation coefficient** summarizes the association between two variables. A zero correlation coefficient indicates no linear relationship. A value of +1 indicates a perfect positive correlation, while a value of -1 indicates a perfect negative correlation.
+
 ### Correlation Vs. Causation Examples
 
 This section includes correlation vs. causation examples (see lecture for more details).
@@ -223,8 +248,8 @@ A strong relationship between two variables does **not** always mean that change
 
 There are two relationships which can be mistaken for causation:
 
-1. **Common response**: refers to the possibility that a change in a _lurking variable_ is causing changes in both our explanatory variable and our response variable
-2. **Confounding**: refers to the possibility that either the change in our explanatory variable is causing changes in the response variable OR that a change in a _lurking variable_ is causing changes in the response variable
+1. **Common response**: refers to the possibility that a change in a _lurking variable_ is causing changes in both our explanatory variable (x) and our response variable (y).
+2. **Confounding**: refers to the possibility that either the change in our explanatory variable is causing changes in the response variable OR that a change in a _lurking variable_ is causing changes in the response variable.
 
 ### Additional Material: Measuring Linear Correlation In Python
 
@@ -234,7 +259,7 @@ This section includes materials for measuring linear correlation in Python (see 
 
 ### Empirical Rule
 
-The [empirical rule](https://www.investopedia.com/terms/e/empirical-rule.asp) or three-sigma rule states that 99.7% of data observed following a normal distribution lies within 3 standard deviations of the mean. Additionally, 68% of the data falls within one standard deviation, 95% percent within two standard deviations, and 99.7% within three standard deviations from the mean.
+The [empirical rule](https://www.investopedia.com/terms/e/empirical-rule.asp) or three-sigma rule states that 99.7% of data observed following a normal distribution, or Gaussian Distribution, lies within 3 standard deviations of the mean. Additionally, 68% of the data falls within one standard deviation, 95% percent within two standard deviations, and 99.7% within three standard deviations from the mean.
 
 ### Population Proportions And Margin Of Error
 
