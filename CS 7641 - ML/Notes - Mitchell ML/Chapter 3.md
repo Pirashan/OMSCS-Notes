@@ -83,7 +83,7 @@ Before defining **Information Gain**, we first define **Entropy**, a concept fro
 
 For a dataset **S** with **positive** and **negative** examples:
 \[
-Entropy(S) = - p_+ \log_2(p_+) - p_- \log_2(p_-)
+Entropy(S) = - p_+ \log_2 p_+ - p_- \log_2 p_-
 \]
 where:
 - \( p_+ \) = proportion of positive examples in **S**
