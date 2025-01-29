@@ -82,9 +82,8 @@ In the **ID3 algorithm**, the most important decision is selecting which **attri
 Before defining **Information Gain**, we first define **Entropy**, a concept from information theory that measures the **(im)purity** of a dataset.
 
 For a dataset **S** with **positive** and **negative** examples:
-\[
-Entropy(S) = - p_+ \log_2 p_+ - p_- \log_2 p_-
-\]
+![image](https://github.com/user-attachments/assets/2f87f543-52c4-47b2-92b9-7c9cd2b9d7e2)
+
 where:
 - \( p_+ \) = proportion of positive examples in **S**
 - \( p_- \) = proportion of negative examples in **S**
@@ -94,9 +93,8 @@ where:
 ### **Information Gain: Choosing the Best Attribute**
 The **best attribute** to split on is the one that provides the **most reduction in entropy** (i.e., highest **Information Gain**).
 
-\[
-IG(S, A) = Entropy(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} Entropy(S_v)
-\]
+![image](https://github.com/user-attachments/assets/b7c6c37e-c661-465a-bfc2-23c2bba4469f)
+
 
 where:
 - \( A \) = candidate attribute
@@ -118,9 +116,8 @@ The **ID3** algorithm builds the decision tree **greedily** using **Information 
 - If examples are evenly split → **One bit is needed** (entropy = 1).
 - For more than two classes, entropy generalizes to:
   
-  \[
-  Entropy(S) = - \sum_{i=1}^{c} p_i \log_2(p_i)
-  \]
+![image](https://github.com/user-attachments/assets/d872140b-e188-40a6-abea-10d96aeac73e)
+
 
   where **c** is the number of possible classes.
 
