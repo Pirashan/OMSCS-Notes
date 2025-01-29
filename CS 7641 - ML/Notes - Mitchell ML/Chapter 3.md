@@ -252,7 +252,7 @@ Rule post-pruning is a technique to improve the accuracy of decision trees by co
 
 The **information gain** measure favors attributes with many values, potentially leading to overfitting. For instance, an attribute like **Date**, which has many possible values, can perfectly classify the training data but perform poorly on unseen examples. To address this, alternative measures for attribute selection have been developed:
 
-### 1. Gain Ratio:
+#### 1. Gain Ratio:
 - **Gain Ratio** modifies the information gain measure by incorporating a penalty term called **split information**. This penalty discourages the selection of attributes with many uniformly distributed values. 
 - The Gain Ratio is calculated as the ratio of information gain to split information. The attribute that maximizes the gain ratio is chosen.
 - This measure avoids issues like overfitting with attributes like **Date**, which can have a very high information gain but low utility for generalization.
@@ -260,12 +260,12 @@ The **information gain** measure favors attributes with many values, potentially
 ![image](https://github.com/user-attachments/assets/2c51e68b-3ea5-4bc9-b5ee-95bf91a5881b)
 ![image](https://github.com/user-attachments/assets/d5196ded-45b8-426c-9b0c-73f04e56b25c)
 
-### 2. Distance-Based Measure:
+#### 2. Distance-Based Measure:
 - **Distance-Based Measure** evaluates attributes based on the distance between the data partition they create and the perfect partition (one that perfectly classifies the training data).
 - It selects the attribute whose partition is closest to the perfect partition, overcoming the limitations of the Gain Ratio and not being biased toward attributes with a large number of values.
 - This method has shown to produce smaller trees and comparable predictive accuracy.
 
-### 3. Other Measures:
+#### 3. Other Measures:
 - Various other selection measures have been proposed, such as those by **Breiman et al. (1984)**, **Mingers (1989a)**, and **Dietterich et al. (1996)**.
 - Experimental analysis suggests that although these measures impact tree size, the extent and method of **post-pruning** have a more significant effect on final accuracy.
 
