@@ -45,6 +45,10 @@ Word analogy problems have become one of the _standard tools for evaluating cont
 
 > Word2vec is a technique for natural language processing published in 2013. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text. Once trained, such a model can detect synonymous words or suggest additional words for a partial sentence. As the name implies, word2vec represents each distinct word with a particular list of numbers called a vector. The vectors are chosen carefully such that a simple mathematical function (the cosine similarity between the vectors) indicates the level of semantic similarity between the words represented by those vectors. -Wiki
 
+- Stores each word as a point in space, where it is represented by a vector of a fixed number of dimensions (generally 30)
+- Unsupervised, built just by reading huge corpus of data
+- Dimensions are projections along different axes
+
 ## Lesson 13 Bias In Word Embeddings
 
 ### Bias In Word Embedding
