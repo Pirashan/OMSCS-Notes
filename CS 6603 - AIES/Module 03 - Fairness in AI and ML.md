@@ -36,6 +36,9 @@ Vectors space models can be represented as:
 
 We can use **cosine similarity** to compute the similarity between two word vectors. However, this notion of similarity depends on what vector representation is selected to represent the words found in your corpus. Given two vectors $a$ and $b$, the cosine similarity is defined as the _dot-product_ of the two vectors divided by their _length_.
 
+
+A value of 1 mans the vectors are quite similar to eachother, while -1 means they are similar but opposite.
+
 Word analogy problems have become one of the _standard tools for evaluating context-based word vectors_.
 
 ### Word Embeddings (`word2vec`)
