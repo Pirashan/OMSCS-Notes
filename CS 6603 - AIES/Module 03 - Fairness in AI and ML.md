@@ -49,6 +49,13 @@ Word analogy problems have become one of the _standard tools for evaluating cont
 - Unsupervised, built just by reading huge corpus of data
 - Dimensions are projections along different axes
 
+Predict the context of a given word by learning probabilities of co-occurrence from a corpus.
+In theory, words that share similar contexts tend to have similar meanings. As such, instead of counting co-occurrences directly, we should be able to generate word vectors that can predict the context of a word based on its surrounding words by learning form a corpus of data.
+
+Continuous Bag of Words is a neural network that ist rained to predict which word fits in a gap in a sentence. For example, given the partial sentence "the student _ the exam", the neural network predicts that "passed" has a high probability of filling the gap.
+
+Skip gram starts with a single word embedding and tries to predict the surrounding words. Word2vec uses words a few positions away from each center word to predict similarities between every word and its context words. The pairs of center word/context word are called "skip-grams".
+
 ## Lesson 13 Bias In Word Embeddings
 
 ### Bias In Word Embedding
