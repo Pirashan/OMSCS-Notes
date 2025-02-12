@@ -203,6 +203,8 @@ Typical prediction tasks include:
 - **Regression**: predict a numerical label for an unlabeled observation
 - **Clustering**: discovering groups of similar instances
 
+Classification is supervised learning, which classifies data (constructs a model) based on the training data and the values (class labels) indicating the class of the observations. New data is classified based on the training set.
+
 Prediction models continuous-valued functions, i.e., predicts unknown or missing
 values. Prediction is _similar_ to classification: construct a model and use model to predict unknown value. Prediction is _different_ from classification, prediction models continuous-valued functions versus predicting categorical class labels.
 
