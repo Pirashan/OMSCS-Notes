@@ -208,6 +208,21 @@ Classification is supervised learning, which classifies data (constructs a model
 Prediction models continuous-valued functions, i.e., predicts unknown or missing
 values. Prediction is _similar_ to classification: construct a model and use model to predict unknown value. Prediction is _different_ from classification, prediction models continuous-valued functions versus predicting categorical class labels.
 
+Classification Process - Evaluation
+Counts of test records that are correctly or incorrectly predicted by the classification model.
+Confusion Matrix:
+
+<img width="1344" alt="image" src="https://github.com/user-attachments/assets/1f368073-c8a3-4650-bb29-e5183e41a390" />
+
+Accuracy = # correct predictions/total predictions
+Error Rate = # false predictions/total predictions
+
+Precision = percentage of correct positive predictions = (PPV)TP/(TP+FP)
+Recall/Sensitivity = Percentage of positively labeled instances, also predicted as positive = TP/(TP+FN)
+Specificity = Percentage of negatively labeled instances, also predicted as negative = TN/(TN+FP)
+Speed and Scalability = Time to construct the model or time to use the model
+Interpretability = Understanding and insight provided by the model
+
 Another issue that occurs in predictive algorithms is _generalization_:
 
 - How do we ensure good generalization, i.e., avoid “over-fitting” on our particular data samples?
