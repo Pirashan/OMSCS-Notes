@@ -39,3 +39,120 @@ PAC (Probably Approximately Correct) Learnability characterizes the ability of a
 
 PAC learning also establishes that learnability depends on both computational efficiency and the number of training examples, as polynomial computation per example implies polynomially bounded data requirements. However, PAC learning assumes that the hypothesis space \( H \) contains a near-optimal hypothesis for every target concept, which can be restrictive. Later sections explore more flexible learning scenarios that relax this assumption.
 
+## 7.3 Sample Complexity for Finite Hypothesis Spaces
+
+The section discusses the **sample complexity** of learning problems, particularly for **consistent learners**, which always find a hypothesis that perfectly fits the training data when possible. The key challenge in PAC (Probably Approximately Correct) learning is determining how many training examples are required for successful generalization.
+
+A **version space** is the set of hypotheses that correctly classify the training data. To ensure the version space contains no hypotheses with high error, we consider the concept of **ε-exhaustion**, where all remaining hypotheses have error less than **ε**.
+
+### Theorem (Haussler, 1988)
+If the hypothesis space **H** is finite and **m** examples are drawn independently, the probability that the version space is **not** ε-exhausted is at most:
+
+\[
+|H|(1 - ε)^m
+\]
+
+Using an inequality approximation, the number of training examples required to ensure with probability **(1 - δ)** that any consistent hypothesis is approximately correct within error **ε** is:
+
+\[
+m \geq \frac{1}{\epsilon} \ln \frac{|H|}{\delta}
+\]
+
+### Key Insights:
+- **m grows linearly** with **1/ε**, meaning more examples are needed for smaller error.
+- **m grows logarithmically** with **1/δ**, meaning reducing uncertainty requires fewer additional examples.
+- **m grows logarithmically** with **|H|**, so larger hypothesis spaces require more examples.
+- The bound may **overestimate** the required examples, especially for large hypothesis spaces.
+- Tighter bounds exist, particularly for infinite hypothesis spaces (covered in Section 7.4).
+
+### 7.3.1 Agnostic Learning and Inconsistent Hypotheses
+
+Agnostic learning refers to cases where the hypothesis space \( H \) may not contain the true target concept \( c \), meaning a hypothesis with zero training error may not be found. In this scenario, the learner selects the hypothesis in \( H \) with the minimum training error. Unlike PAC-learning, which assumes \( c \in H \), an agnostic learner makes no such assumption.
+
+To extend the previous sample complexity bound (Equation 7.2) to this case, Hoeffding bounds (or additive Chernoff bounds) are used. These bounds describe how the observed training error deviates from the true error over independent samples. This leads to a new bound on the probability that the best hypothesis has a true error exceeding its training error by more than \( \epsilon \).
+
+The revised sample complexity bound shows that the required number of training examples \( m \) still grows logarithmically with \( |H| \) and \( 1/\delta \), but now scales as \( (1/\epsilon)^2 \), rather than linearly with \( 1/\epsilon \).
+
+<img width="173" alt="image" src="https://github.com/user-attachments/assets/29f3f760-8f42-4cce-8eef-321820ff8c8e" />
+
+### 7.3.2 Conjunctions of Boolean Literals Are PAC-Learnable
+
+The class of conjunctions of Boolean literals is **PAC-learnable** because a consistent learner requires only a **polynomial number of training examples** and polynomial time per training example. Given \( n \) Boolean variables, the hypothesis space size is \( 3^n \), as each variable can be included as a literal, negated, or ignored. Using Equation (7.2), the sample complexity for learning such conjunctions is shown to be polynomial in \( n \), \( 1/\epsilon \), and \( 1/\delta \).
+
+The **FIND-S algorithm** is an example of a learning algorithm that efficiently PAC-learns Boolean conjunctions. FIND-S incrementally computes the most specific hypothesis consistent with the training data and updates in **linear time** per training example. Given these properties, Theorem 7.2 establishes that conjunctions of Boolean literals are **PAC-learnable** using FIND-S.
+
+<img width="490" alt="image" src="https://github.com/user-attachments/assets/76591fdf-5ee1-46e3-af05-acb22dc0f337" />
+
+### 7.3.3 PAC-Larnability of Othr Concept Classes
+
+Equation (7.2) provides a general way to bound the **sample complexity** for learning target concepts in a given class \( C \). Previously, it was applied to **Boolean conjunctions**, showing they have **polynomial sample complexity**. However, not all concept classes share this property.
+
+#### 7.3.3.1 **Unbiased Learners**
+An **unbiased concept class** includes every possible teachable concept relative to \( X \). The total number of target concepts corresponds to the **power set** of \( X \), leading to \( |C| = 2^{|X|} \). For instances defined by \( n \) Boolean features, the number of concepts grows exponentially as \( |C| = 2^{2^n} \).
+
+Since an unbiased learner must use a **hypothesis space equal to the concept space** (\( H = C \)), substituting \( |H| = 2^{2^n} \) into Equation (7.2) results in **exponential sample complexity** under the PAC model. This means **unbiased concept classes are not PAC-learnable**.
+
+#### 7.3.3.2 **k-Term DNF and k-CNF Concepts**
+Some concept classes have **polynomial sample complexity** but **cannot be learned in polynomial time**. An example is **k-term Disjunctive Normal Form (k-term DNF)**, where each term is a conjunction of Boolean attributes and their negations. Although the **sample complexity** of k-term DNF is polynomial in \( 1/\epsilon, 1/\delta, n, \) and \( k \), its **computational complexity** is not polynomial, as solving this learning problem is equivalent to problems that are **NP-hard** (unless RP = NP).  
+
+Surprisingly, a **larger concept class**, **k-CNF (k-Clause Conjunctive Normal Form)**, is **PAC-learnable** despite being more expressive than k-term DNF. Since any k-term DNF can be rewritten as a k-CNF (but not vice versa), k-CNF enables **polynomial-time learning** while maintaining **polynomial sample complexity**. Thus, k-term DNF is **PAC-learnable using a hypothesis class of k-CNF**.
+
+##7.4 **Sample Complexity for Infinite Hypothesis Spaces**
+When analyzing **sample complexity** in **PAC learning**, Equation (7.2) relates complexity to the logarithm of the hypothesis space size (\(|H|\)). However, this approach has limitations:
+1. It can lead to **weak bounds** for large hypothesis spaces.
+2. It **cannot be applied to infinite hypothesis spaces**.
+
+To address these issues, a more refined measure, the **Vapnik-Chervonenkis (VC) dimension**, is introduced. **VC dimension (VC(H))** provides a tighter and more useful characterization of sample complexity, particularly for infinite hypothesis spaces.
+
+### 7.4.1 Shattering a Set of Instances
+
+The **VC dimension** measures how well a hypothesis space **H** can discriminate between instances, rather than counting the number of hypotheses. It is defined using the concept of **shattering**:
+- A hypothesis space **H** **shatters** a set of instances **S** if it can **represent every possible dichotomy** (labeling) of **S**.
+- If a hypothesis space **fails to shatter** a set, there exist some labelings that **cannot be expressed** by any hypothesis in **H**.
+- The ability to **shatter** a set indicates the **capacity of H** to represent different target concepts.
+
+<img width="503" alt="image" src="https://github.com/user-attachments/assets/9ca287c0-1762-48f7-a079-138badf59770" />
+
+Figure 7.3 illustrates an example where **three instances** are shattered by a hypothesis space, meaning every possible labeling is covered by some hypothesis.
+
+#### 7.4.2.1 Illustrative Examples
+
+### **Illustrative Examples of VC Dimension**
+This section provides illustrative examples to build intuition about the **VC dimension** \( VC(H) \) for different hypothesis spaces.
+
+#### **1. Intervals on the Real Line**
+- The instance space \( X \) consists of real numbers, and the hypothesis space \( H \) includes all intervals of the form \( a < x < b \).
+- A set of **two** distinct points can be shattered since all possible dichotomies can be represented by intervals.
+- However, a set of **three** points **cannot** be shattered because some dichotomies (e.g., including the first and last but excluding the middle) cannot be represented by a single closed interval.
+- **Conclusion:** \( VC(H) = 2 \), despite \( H \) being infinite.
+
+<img width="511" alt="image" src="https://github.com/user-attachments/assets/476167be-81fd-4ac0-8d61-1df0b0dcc032" />
+
+#### **2. Linear Decision Boundaries in 2D**
+- The instance space \( X \) is the 2D plane, and \( H \) consists of **all linear decision boundaries** (i.e., perceptrons with two inputs).
+- Any **two** distinct points can be shattered.
+- Any **three** non-collinear points can be shattered using linear decision surfaces.
+- However, **four** points **cannot** always be shattered.
+- **Conclusion:** \( VC(H) = 3 \), and in general, the VC dimension of linear classifiers in \( r \)-dimensional space is \( r + 1 \).
+
+#### **3. Boolean Conjunctions**
+- Each instance in \( X \) is described by three Boolean literals (\( l_1, l_2, l_3 \)), and hypotheses in \( H \) are conjunctions of up to three literals.
+- A set of **three** instances can be shattered by constructing hypotheses that exclude specific instances.
+- This concept generalizes to **n** Boolean literals.
+- **Conclusion:** The VC dimension for conjunctions of **n** Boolean literals is **exactly** \( n \).
+
+These examples illustrate that **VC dimension is independent of the size of \( H \)** and depends on the complexity of how hypotheses can separate instances.
+
+### 7.4.3 Sample Complexity and the VC Dimension  
+
+The sample complexity of learning is closely tied to the VC dimension, providing both upper and lower bounds on the number of training examples required for Probably Approximately Correct (PAC) learning.  
+
+- **Upper Bound (Blumer et al., 1989):**  
+  - The number of required training examples grows logarithmically with \(1/\epsilon\) and linearly with VC(H).  
+  - The complexity measure \( \log |H| \) is replaced by VC(H), making the bound more refined.  
+
+- **Lower Bound (Ehrenfeucht et al., 1989):**  
+  - If the number of training examples is too small, no learner can PAC-learn every target concept in any nontrivial concept class \( C \).  
+  - This provides a necessary minimum number of training examples to ensure successful learning.  
+
+Both bounds are logarithmic in \(1/\delta\) and linear in VC(H), with the upper bound differing slightly due to an additional \(\log(1/\epsilon)\) term.  
