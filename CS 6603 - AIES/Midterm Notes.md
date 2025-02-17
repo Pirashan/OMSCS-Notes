@@ -57,19 +57,26 @@ There are three primary relationships between ethics and law:
 
 There are several general categories of US law:
 
-- Civil
-- Criminal
-- Private
-- Public
+- Civil: Governs the nation or state; manags relationships/conflicts between organizational entitis and people; recorded in volumes of legal "code" available for review by the average citizen.
+- Criminal: Addresses violations harmful to society; actively enforced by the state.
+- Private" Regulates relationships between individuals and organizations; encompasses family law, commercial law, and labor law.
+- Public: Regulats structure/administration of government agencies and relationships with citizens, employees, and other governmnts; encompasses criminal, administrative, and constitutional law.
+
+There are a number of domains that are **regulated by government** (which also extends to businses practices involving marketing and advertising).
 
 On the other hand, the purpose of _regulations_ is to achieve certain public desired goals that the market may fail to realize (i.e., protect to public). Some examples include:
 
-- Credit
-- Education
-- Employment
-- Housing and public accommodation
+- Credit (Equal Credit Opportunity Act)
+- Education (Educational Amendments of 1972; Civil Rights Act of 1964)
+- Employment (Civil Rights Act of 1964)
+- Housing and public accommodation (Fair Housing Act; Civil Rights Act of 1964)
 
 **Discrimination** is prohibited on the basis of membership in a protected class-group which has historically been discriminated against.
+
+Forms of discrimination (or bias) include:
+
+- Intentional
+- Unconscious
 
 The protected classes are as follows:
 - Race (Civil Rights Act of 1964, 1991)
@@ -96,18 +103,13 @@ The protected classes are as follows:
 
 - Genetic information (Genetic Information Nondiscrimination Act)
 
-Forms of discrimination (or bias) include:
-
-- Intentional
-- Unconscious
-
 How do we know if a group is statistically discriminated against?
 
 - Numerical analysis suggests that groups are treated or affected differently although one must rule out other explanations (very difficult)
 - Direct evidence showing deliberate intention in a particular case, e.g., various documents, conversations, compensation patterns, etc.; however, this data is typically not available to individuals
 
 **Equality of opportunity** is typically concerned with ensuring that decision-making processes treat similar people similarly on the basis of relevant features, given their current degree of similarity.
-
+ 
 **Equality of outcome** is a notion of equality of opportunity that forces decision-making to treat seemingly dissimilar people similarly, on the belief that their current dissimilarity is the result of past injustices.
 
 ### Ethical Decision Making
